@@ -10,7 +10,8 @@
 		}
 	],
 	"require": {
-		"pear/console_commandline": "v1.2.1"
+		"pear/console_commandline": "v1.2.1",
+		"symfony/console": "^3.3"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "*"
