@@ -1,0 +1,29 @@
+{
+	"name": "kojiro526/php-docxtable",
+	"description": "A simple utility to update the table style contained in the docx file.",
+	"type": "library",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "kojiro",
+			"email": "ssk.526@gmail.com"
+		}
+	],
+	"require": {
+		"pear/console_commandline": "v1.2.1"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "*"
+	},
+	"autoload": {
+		"psr-4": {
+			"PhpDocxtable\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"PhpDocxtable\\Test\\": "tests/"
+		}
+	},
+	"bin": ["bin/docxtable-php.php"]
+}
