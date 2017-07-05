@@ -10,7 +10,7 @@
 		}
 	],
 	"require": {
-		"pear/console_commandline": "v1.2.1",
+		"php":">=5.6.0",
 		"symfony/console": "^3.3",
 		"comodojo/zip": "^2.1"
 	},
