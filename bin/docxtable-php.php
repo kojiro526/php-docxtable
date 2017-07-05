@@ -1,6 +1,7 @@
 <?php
 use Symfony\Component\Console\Application;
 use PhpDocxtable\ListCommand;
+use PhpDocxtable\UpdateCommand;
 
 // installed via composer?
 if (file_exists($a = __DIR__ . '/../../../autoload.php')) {
@@ -22,4 +23,5 @@ try {
 	
 $app = new Application();
 $app->add(new ListCommand());
+$app->add(new UpdateCommand());
 $app->run();

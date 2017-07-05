@@ -4,9 +4,106 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7f82e67ae145e6d4f0b8b1dc8df35cae",
-    "content-hash": "80f528310661031d8ad49fc79a67bc80",
+    "hash": "da4926dbb9f8ebf21de92defaae8ca77",
+    "content-hash": "cf8cc71f6142d7b76bcccf150b65f444",
     "packages": [
+        {
+            "name": "comodojo/exceptions",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/comodojo/exceptions.git",
+                "reference": "5eb2c462b04a08e109865429fbdb4e36cce358cf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/comodojo/exceptions/zipball/5eb2c462b04a08e109865429fbdb4e36cce358cf",
+                "reference": "5eb2c462b04a08e109865429fbdb4e36cce358cf",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0|^5.0",
+                "scrutinizer/ocular": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Comodojo\\Exception\\": "src/Exception"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Giovinazzi",
+                    "email": "marco.giovinazzi@comodojo.org",
+                    "homepage": "http://jme.altervista.org"
+                },
+                {
+                    "name": "Marco Castiello",
+                    "email": "marco.castiello@gmail.com"
+                }
+            ],
+            "description": "Common exceptions for comodojo libs and frameworks",
+            "homepage": "https://comodojo.org",
+            "keywords": [
+                "comodojo",
+                "exception"
+            ],
+            "time": "2016-07-27 23:42:58"
+        },
+        {
+            "name": "comodojo/zip",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/comodojo/zip.git",
+                "reference": "a31cd07ebd2cd009eba365c8e8108485c2366eb5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/comodojo/zip/zipball/a31cd07ebd2cd009eba365c8e8108485c2366eb5",
+                "reference": "a31cd07ebd2cd009eba365c8e8108485c2366eb5",
+                "shasum": ""
+            },
+            "require": {
+                "comodojo/exceptions": "@stable",
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0|^5.0",
+                "scrutinizer/ocular": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Comodojo\\Zip\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Giovinazzi",
+                    "email": "marco.giovinazzi@comodojo.org",
+                    "homepage": "http://jme.altervista.org"
+                }
+            ],
+            "description": "ZipArchive toolbox",
+            "homepage": "https://comodojo.org",
+            "keywords": [
+                "merge",
+                "multiple",
+                "unzip",
+                "zip",
+                "ziparchive"
+            ],
+            "time": "2015-12-21 23:50:31"
+        },
         {
             "name": "pear/console_commandline",
             "version": "v1.2.1",
@@ -164,7 +261,7 @@
         },
         {
             "name": "symfony/console",
-            "version": "v3.3.3",
+            "version": "v3.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
@@ -233,16 +330,16 @@
         },
         {
             "name": "symfony/debug",
-            "version": "v3.3.3",
+            "version": "v3.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "bcfd02728d9b776e5c2195a4750c813fe440402f"
+                "reference": "63b85a968486d95ff9542228dc2e4247f16f9743"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/bcfd02728d9b776e5c2195a4750c813fe440402f",
-                "reference": "bcfd02728d9b776e5c2195a4750c813fe440402f",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/63b85a968486d95ff9542228dc2e4247f16f9743",
+                "reference": "63b85a968486d95ff9542228dc2e4247f16f9743",
                 "shasum": ""
             },
             "require": {
@@ -285,7 +382,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-06 14:51:55"
+            "time": "2017-07-05 13:02:37"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1558,7 +1655,7 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.3.3",
+            "version": "v3.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",

@@ -11,7 +11,8 @@
 	],
 	"require": {
 		"pear/console_commandline": "v1.2.1",
-		"symfony/console": "^3.3"
+		"symfony/console": "^3.3",
+		"comodojo/zip": "^2.1"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "*"
