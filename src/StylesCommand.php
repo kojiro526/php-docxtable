@@ -19,6 +19,10 @@ class StylesCommand extends Command
 	public function execute(InputInterface $input, OutputInterface $output)
 	{
 		$file_path = $input->getOption('file');
+		if(empty($file_path)){
+			die('Path to docx file is required' . "\n");
+		}
+
 		if($path = realpath($file_path)){
 			$zip = new \ZipArchive();
 			$res = $zip->open($path);

@@ -24,11 +24,23 @@ class UpdateCommand extends Command
 	public function execute(InputInterface $input, OutputInterface $output)
 	{
 		$file_path = $input->getOption('file');
+		if(empty($file_path)){
+			die('Path to docx file to input is required');
+		}
+
 		if (! ($input_file = realpath($file_path))) {
 			die('Docx file not found.' . "\n");
 		}
+
 		$output_path = $input->getOption('output');
+		if(empty($output_path)){
+			die('Path to docx file to output is required' . "\n");
+		}
+
 		$style = $input->getOption('style');
+		if(empty($style)){
+			die('New style id is required' . "\n");
+		}
 		
 		//$tmp_dir = tempnam(sys_get_temp_dir(), 'docxtable');
 		$tmp_dir = sys_get_temp_dir();
