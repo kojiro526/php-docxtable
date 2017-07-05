@@ -1,7 +1,9 @@
+#!/usr/bin/env php
 <?php
 use Symfony\Component\Console\Application;
-use PhpDocxtable\ListCommand;
+use PhpDocxtable\StylesCommand;
 use PhpDocxtable\UpdateCommand;
+use Symfony\Component\Console\Command\HelpCommand;
 
 // installed via composer?
 if (file_exists($a = __DIR__ . '/../../../autoload.php')) {
@@ -22,6 +24,8 @@ try {
 */
 	
 $app = new Application();
-$app->add(new ListCommand());
+$app->add(new StylesCommand());
 $app->add(new UpdateCommand());
+$app->add(new HelpCommand());
+$app->setDefaultCommand('help');
 $app->run();

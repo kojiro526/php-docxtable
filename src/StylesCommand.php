@@ -6,10 +6,10 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class ListCommand extends Command
+class StylesCommand extends Command
 {
 	protected function configure(){
-		$this->setName('list')
+		$this->setName('styles')
 		->setDescription('Listing table styles in docx')
 		->setDefinition(array(
 			new InputOption('file' ,'f', InputOption::VALUE_REQUIRED, 'Path to docx file')
