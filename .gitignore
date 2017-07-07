@@ -4,3 +4,5 @@
 .settings/
 /tmp/*
 !.gitkeep
+
+.idea
