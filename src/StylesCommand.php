@@ -29,7 +29,7 @@ class StylesCommand extends Command
 			$style_xml = $docx->getStyleXml();
 			$table_styles = $style_xml->getTableStyles();
 
-			// コンソールに取得結果を表示hyouji
+			// コンソールに取得結果を表示
 			foreach ($table_styles->getStyles() as $i => $table_style){
 				echo sprintf("%d:\n", $i + 1);
 				echo ' styleId: ';
