@@ -27,5 +27,5 @@
 			"PhpDocxtable\\Test\\": "tests/"
 		}
 	},
-	"bin": ["bin/docxtable-php.php"]
+	"bin": ["bin/docxtable-php"]
 }
