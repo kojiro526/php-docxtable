@@ -1,6 +1,7 @@
 <?php
 namespace PhpDocxtable;
 
+use PhpDocxtable\libs\Docx;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
@@ -24,40 +25,18 @@ class StylesCommand extends Command
 		}
 
 		if($path = realpath($file_path)){
-			$zip = new \ZipArchive();
-			$res = $zip->open($path);
-			if(!$res){
-				die('Cannot open zip file.');
-			}
-			
-			$fp = $zip->getStream('word/styles.xml');
-			$xml = '';
-			while(!feof($fp)){
-				$xml .= fgets($fp);
-			}
-			fclose($fp);
-			
-			$dom = new \DOMDocument();
-			$dom->loadXML($xml);
-			if( $dom->firstChild->nodeName != 'w:styles' ){
-				echo $dom->firstChild->nodeName . "\n";
-			}
+			$docx = new Docx($path);
+			$style_xml = $docx->getStyleXml();
+			$table_styles = $style_xml->getTableStyles();
 
-			$styles = $dom->getElementsByTagName('style');
-			$count = 1;
-			for( $i=0; $i < $styles->length; $i++){
-				$node = $styles->item($i);
-				if($node->attributes->getNamedItem('type')->nodeValue == 'table'){
-					echo $count . ":\n";
-					echo ' styleId: ';
-					echo $node->attributes->getNamedItem('styleId')->nodeValue . "\n";
-					echo ' name: ';
-					echo $node->getElementsByTagName('name')->item(0)->attributes->getNamedItem('val')->nodeValue . "\n";
-					$count++;
-				}
+			// コンソールに取得結果を表示
+			foreach ($table_styles->getStyles() as $i => $table_style){
+				echo sprintf("%d:\n", $i + 1);
+				echo ' styleId: ';
+				echo $table_style->getId() . "\n";
+				echo ' name: ';
+				echo $table_style->getName() . "\n";
 			}
-			
-			$zip->close();
 		}else{
 			die('Docx file not found.');
 		}
