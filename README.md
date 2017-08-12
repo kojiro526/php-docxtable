@@ -37,6 +37,8 @@ $ docxtable-php styles -f ./example.docx
 
 上記の「MyTable」という名前のスタイルに変更したい場合、そのstyleId（"MyTable"）を控えます。
 
+### スタイルIDの変更
+
 次に、以下のコマンドでdocxファイル内の全てのテーブルのスタイルを"MyTable"というIDで上書きします。
 
 ```
