@@ -6,7 +6,10 @@ docxファイル内のテーブルのスタイルを、ファイル内の特定�
 
 PHP 5.6 以上
 
-Windowsではまだ動作を確認出来ていません。
+Windowsでは以下のフォルダを環境変数のPATHに設定して下さい。
+```
+%USERPROFILE%\AppData\Roaming\Composer\vendor\bin
+```
 
 ## インストール
 
