@@ -6,7 +6,22 @@ docxファイル内のテーブルのスタイルを、ファイル内の特定�
 
 PHP 5.6 以上
 
+## 事前の設定
+
+このコマンドはcomposerでグローバルインストールして使うことを想定しているため、以下のディレクトリにパスを通して下さい。
+
+### Linux, OSX等
+
+`.bash_profile`等に以下のパスを設定して下さい。
+
+```
+export PATH=$HOME/.composer/vendor/bin:$PATH
+```
+
+### Windows
+
 Windowsでは以下のフォルダを環境変数のPATHに設定して下さい。
+
 ```
 %USERPROFILE%\AppData\Roaming\Composer\vendor\bin
 ```
@@ -17,7 +32,7 @@ Windowsでは以下のフォルダを環境変数のPATHに設定して下さい
 $ composer global require kojiro526/php-docxtable
 ```
 
-## 使い方※
+## 使い方
 
 docxファイル内のテーブルスタイルには内部的にIDが割り当てられており、本文内のテーブルのスタイルIDを上書きすれば、テーブルのスタイルを変更できます。
 
