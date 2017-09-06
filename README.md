@@ -63,5 +63,11 @@ $ docxtable-php styles -f ./example.docx
 $ docxtable-php update -f ./example.docx -s MyTable -o ./output.docx
 ```
 
+出力先の指定を省略すると、元のファイルを上書きします。
+
+```
+$ docxtable-php update -f ./example.docx -s MyTable
+```
+
 以上で、テーブルのスタイル変更は完了です。
 

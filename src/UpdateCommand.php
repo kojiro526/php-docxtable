@@ -16,7 +16,7 @@ class UpdateCommand extends Command
 			->setDescription('Update table styles in docx')
 			->setDefinition(array(
 			new InputOption('file', 'f', InputOption::VALUE_REQUIRED, 'Path to docx file'),
-			new InputOption('output', 'o', InputOption::VALUE_REQUIRED, 'Path to new docx file'),
+			new InputOption('output', 'o', InputOption::VALUE_OPTIONAL, 'Path to new docx file'),
 			new InputOption('style', 's', InputOption::VALUE_REQUIRED, 'Style id')
 		));
 	}
@@ -34,7 +34,7 @@ class UpdateCommand extends Command
 
 		$output_path = $input->getOption('output');
 		if(empty($output_path)){
-			die('Path to docx file to output is required' . "\n");
+			$output_path = $file_path;
 		}
 
 		$style = $input->getOption('style');
