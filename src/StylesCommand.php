@@ -28,7 +28,7 @@ class StylesCommand extends Command
 			die('File not found.' . "\n");
 		}
 		
-		if(!in_array(pathinfo($path, PATHINFO_EXTENSION), array('doc', 'docx'))){
+		if(!in_array(pathinfo($path, PATHINFO_EXTENSION), array('docx'))){
 			die('Invalid file format.' . "\n");
 		}
 

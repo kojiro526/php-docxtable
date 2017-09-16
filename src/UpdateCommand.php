@@ -32,7 +32,7 @@ class UpdateCommand extends Command
 			die('File not found.' . "\n");
 		}
 
-		if(!in_array(pathinfo($input_file, PATHINFO_EXTENSION), array('doc', 'docx'))){
+		if(!in_array(pathinfo($input_file, PATHINFO_EXTENSION), array('docx'))){
 			die('Invalid input file format.' . "\n");
 		}
 
@@ -40,7 +40,7 @@ class UpdateCommand extends Command
 		if(empty($output_path)){
 			$output_path = $input_file;
 		}else{
-			if(!in_array(pathinfo($output_path, PATHINFO_EXTENSION), array('doc', 'docx'))){
+			if(!in_array(pathinfo($output_path, PATHINFO_EXTENSION), array('docx'))){
 				die('Invalid output file format.' . "\n");
 			}
 		}
