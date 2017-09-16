@@ -25,16 +25,24 @@ class UpdateCommand extends Command
 	{
 		$file_path = $input->getOption('file');
 		if(empty($file_path)){
-			die('Path to docx file to input is required');
+			die('Path to docx file to input is required' . "\n");
 		}
 
 		if (! ($input_file = realpath($file_path))) {
-			die('Docx file not found.' . "\n");
+			die('File not found.' . "\n");
+		}
+
+		if(!in_array(pathinfo($input_file, PATHINFO_EXTENSION), array('doc', 'docx'))){
+			die('Invalid input file format.' . "\n");
 		}
 
 		$output_path = $input->getOption('output');
 		if(empty($output_path)){
-			$output_path = $file_path;
+			$output_path = $input_file;
+		}else{
+			if(!in_array(pathinfo($output_path, PATHINFO_EXTENSION), array('doc', 'docx'))){
+				die('Invalid output file format.' . "\n");
+			}
 		}
 
 		$style = $input->getOption('style');

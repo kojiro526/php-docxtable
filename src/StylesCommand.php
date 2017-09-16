@@ -24,21 +24,25 @@ class StylesCommand extends Command
 			die('Path to docx file is required' . "\n");
 		}
 
-		if($path = realpath($file_path)){
-			$docx = new Docx($path);
-			$style_xml = $docx->getStyleXml();
-			$table_styles = $style_xml->getTableStyles();
+		if(!($path = realpath($file_path))){
+			die('File not found.' . "\n");
+		}
+		
+		if(!in_array(pathinfo($path, PATHINFO_EXTENSION), array('doc', 'docx'))){
+			die('Invalid file format.' . "\n");
+		}
 
-			// コンソールに取得結果を表示
-			foreach ($table_styles->getStyles() as $i => $table_style){
-				echo sprintf("%d:\n", $i + 1);
-				echo ' styleId: ';
-				echo $table_style->getId() . "\n";
-				echo ' name: ';
-				echo $table_style->getName() . "\n";
-			}
-		}else{
-			die('Docx file not found.');
+		$docx = new Docx($path);
+		$style_xml = $docx->getStyleXml();
+		$table_styles = $style_xml->getTableStyles();
+
+		// コンソールに取得結果を表示
+		foreach ($table_styles->getStyles() as $i => $table_style){
+			echo sprintf("%d:\n", $i + 1);
+			echo ' styleId: ';
+			echo $table_style->getId() . "\n";
+			echo ' name: ';
+			echo $table_style->getName() . "\n";
 		}
 	}
 }
